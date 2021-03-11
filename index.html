@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="HTML, CSS, JavaScript">
+	<meta name="author" content="MD Mizanur Rahman">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>rightClickOff</title>
+	<style type="text/css">
+		*{
+			margin:4px;
+			padding:0;
+			outline:none;
+		}
+		h2{
+			margin-top:0px;
+			text-align:center;
+			background:#ddd;
+			line-height:80px;
+		}
+		strong{
+			color:red;
+		}
+		p{
+			border:1px solid black;
+			background:#DDC;
+			padding:10px;
+			font-size:20px;
+		}
+		img{
+			width:200px;
+			height:200px;
+		}
+	</style>
+</head>
+<body>
+	<h2>You Are Able to Right Click Here</h2>
+	<p id="RightClickOff"><strong>You are unable to right click this paragraph: </strong>The name of my country is Bangladesh which got independence from Pakistan in 1971 by a bloody war.There are 64 distric and Dhaka is the capital of Bangladesh.It is mainly agricultural country and more than 76% people are directly or indirectly depends on agriculture. </p>
+	<div>
+		<p> <!--By default the right click remain on-->
+			<img src="images/rightClickOn.jpg" id="imageOn" alt="Images"><br><span>This image allow right click</span>
+		</p>
+		<p id="rightClickOff"> 
+			<img src="images/rightClickOff.jpg" id="imageOff" alt="Images" /><br><span>This image disabled right click</span>
+		</p>
+		
+	</div>
+	
+	<!--javaScript Start Here-->
+	<script type="text/javascript">
+		var rightClickNoneFirst= document.getElementById('RightClickOff');
+		var rightClickNoneSecond= document.getElementById('rightClickOff');
+		
+		rightClickNoneFirst.addEventListener('contextmenu',rightClickOff);
+		rightClickNoneSecond.addEventListener('contextmenu',rightClickOff);
+		
+		function rightClickOff(value){
+			value.preventDefault(value);
+		}
+	</script>
+</body>
+</html>
